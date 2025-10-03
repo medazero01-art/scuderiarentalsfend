@@ -1,412 +1,381 @@
-:root {
-    --primary-red: #E24C4B;
-    --dark-bg: #1a1a1a;
-    --modal-bg: #2b2b2b;
-    --text-color: #f0f0f0;
-    --light-gray: #ccc;
-    --input-bg: #3c3c3c;
-    --input-border: #555;
-    --error-color: #ff6b6b;
-}
+/* ---------------------------------- */
+/* --- Styles du Modal de Location --- */
+/* ---------------------------------- */
 
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    animation: fadeInOverlay 0.3s ease-out;
-    padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeInOverlay 0.3s ease-out;
+  padding: 20px;
 }
 
 .modal-content {
-    background-color: var(--modal-bg);
-    color: var(--text-color);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-    width: 90%;
-    overflow-y: auto;
-    position: relative;
-    text-align: center;
-    animation: slideInFromTop 0.3s ease-out;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: var(--modal-bg);
+  color: var(--text-color);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 750px;
+  max-height: 600px;
+  overflow-y: auto;
+  position: relative;
+  text-align: center;
+  animation: slideInFromTop 0.3s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 1.8em;
-    color: var(--light-gray);
-    cursor: pointer;
-    transition: color 0.2s ease;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.8em;
+  color: var(--light-gray);
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
 
 .close-btn:hover {
-    color: var(--primary-red);
+  color: var(--primary-red);
 }
 
 .modal-content h2 {
-    color: var(--primary-red);
-    font-size: 2.2em;
-    margin-bottom: 15px;
-    font-weight: 700;
+  color: var(--primary-red);
+  font-size: 2.2em;
+  margin-bottom: 15px;
+  font-weight: 700;
 }
 
 .modal-car-image {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .modal-content p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    margin-bottom: 10px;
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 10px;
 }
 .modal-content p:last-of-type {
-    font-weight: bold;
-    color: var(--primary-red);
-    margin-top: 15px;
-    font-size: 1.2em;
+  font-weight: bold;
+  color: var(--primary-red);
+  margin-top: 15px;
+  font-size: 1.2em;
 }
 
 .date-selection {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin: 25px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 25px 0;
 }
 
 .date-selection label {
-    display: block;
-    text-align: left;
-    margin-bottom: 5px;
-    font-weight: 600;
-    color: var(--light-gray);
-    font-size: 0.95em;
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: var(--light-gray);
+  font-size: 0.95em;
 }
 
 .rental-summary {
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px dashed #555;
-    font-size: 1.1em;
-    text-align: left;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px dashed #555;
+  font-size: 1.1em;
+  text-align: left;
 }
 
 .rental-summary p {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .rental-summary strong {
-    color: var(--primary-red);
+  color: var(--primary-red);
 }
 
 .error {
-    color: var(--error-color);
-    background-color: rgba(255, 107, 107, 0.15);
-    border: 1px solid var(--error-color);
-    padding: 10px;
-    border-radius: 6px;
-    margin: 15px 0;
-    font-size: 0.95em;
+  color: var(--error-color);
+  background-color: rgba(255, 107, 107, 0.15);
+  border: 1px solid var(--error-color);
+  padding: 10px;
+  border-radius: 6px;
+  margin: 15px 0;
+  font-size: 0.95em;
 }
 
 .modal-content button:last-of-type {
-    width: 100%;
-    padding: 15px;
-    background-color: var(--primary-red);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.2em;
-    font-weight: 700;
-    margin-top: 20px;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-    letter-spacing: 0.05em;
+  width: 100%;
+  padding: 15px;
+  background-color: var(--primary-red);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-top: 20px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  letter-spacing: 0.05em;
 }
 
 .modal-content button:last-of-type:hover:not(:disabled) {
-    background-color: #c93b3b;
-    transform: translateY(-2px);
+  background-color: #c93b3b;
+  transform: translateY(-2px);
 }
 
 .modal-content button:last-of-type:disabled {
-    background-color: #6a2e2e;
-    cursor: not-allowed;
-    opacity: 0.7;
+  background-color: #6a2e2e;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
-@keyframes fadeInOverlay {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+/* ---------------------------------- */
+/* --- Styles DatePicker Personnalisés --- */
+/* ---------------------------------- */
 
-@keyframes slideInFromTop {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 600px) {
-    .modal-content {
-        padding: 20px;
-        margin: 10px;
-        max-height: 90vh; 
-    }
-    .modal-content h2 {
-        font-size: 1.8em;
-    }
-    .date-selection {
-        gap: 10px;
-    }
-    .modal-content button:last-of-type {
-        font-size: 1em;
-        padding: 12px;
-    }
-}
-
-/* Custom Scrollbar Styles (for WebKit browsers: Chrome, Safari, Edge, Opera) */
-.modal-content::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-.modal-content::-webkit-scrollbar-track {
-    background: var(--modal-bg);
-    border-radius: 10px;
-}
-
-.modal-content::-webkit-scrollbar-thumb {
-    background-color: #555;
-    border-radius: 10px;
-    border: 2px solid var(--modal-bg);
-}
-
-.modal-content::-webkit-scrollbar-thumb:hover {
-    background-color: #777;
-}
-
-/* REACT DATEPICKER CUSTOM STYLES */
 .date-picker-wrapper {
-    width: 100%;
+  width: 100%;
 }
 
 .date-input {
-    width: 100%;
-    padding: 12px;
-    background-color: var(--input-bg);
-    border: 1px solid var(--input-border);
-    border-radius: 6px;
-    color: var(--text-color);
-    font-size: 1em;
-    box-sizing: border-box;
-    outline: none;
-    cursor: pointer;
+  width: 100%;
+  padding: 12px;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  color: var(--text-color);
+  font-size: 1em;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
 }
 
-
+/* Conteneur principal du DatePicker */
 .react-datepicker {
-    font-family: inherit;
-    background-color: var(--modal-bg);
-    border: 1px solid var(--input-border);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
-    color: var(--text-color);
-    z-index: 10;
-    /* Rendre le calendrier responsive */
-    width: 100%; 
-    max-width: 300px;
+  font-family: inherit;
+  background-color: var(--modal-bg);
+  border: 1px solid var(--input-border);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+  color: var(--text-color);
+  z-index: 10;
+  width: 100%;
+  max-width: 300px;
 }
 
+/* Conteneur du mois */
 .react-datepicker__month-container {
-    padding: 0;
-    /* Assure que le conteneur du mois prend toute la largeur sur mobile */
-    width: 100%; 
+  padding: 0;
+  width: 100%;
 }
 
-/* ALIGNEMENT MOIS ET FLÈCHES */
+/* Header (Mois et flèches) */
 .react-datepicker__header {
-    background-color: var(--modal-bg) !important;
-    border-bottom: 1px solid var(--input-border);
-    padding: 0;
-    
-    display: flex; 
-    align-items: center;
-    justify-content: space-between;
-    height: 38px;
-    padding: 0 10px; /* Ajout d'un padding pour un meilleur espacement sur les bords */
-    position: relative;
-    /* Correction: S'assurer que le header prend toute la largeur du calendrier */
-    width: 100%; 
+  background-color: var(--modal-bg) !important;
+  border-bottom: 1px solid var(--input-border);
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 38px;
+  position: relative;
+  width: 100%;
 }
 
-/* Positionnement des flèches */
+/* Flèches de navigation */
 .react-datepicker__navigation {
-    /* Rétablit le positionnement absolu pour le calendrier par défaut, mais avec des ajustements pour centrer */
-    position: absolute; 
-    padding: 0;
-    height: 100%;
-    top: 0;
-    
-    /* Centrage vertical à l'intérieur du conteneur absolu */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    background-color: transparent !important;
-    border-color: transparent !important;
-    cursor: pointer;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
 }
 
 .react-datepicker__navigation--previous {
-    /* Positionnement à gauche et alignement parfait au milieu */
-    left: 10px; 
-    margin: 0; 
+  left: 10px;
 }
 .react-datepicker__navigation--next {
-    /* Positionnement à droite et alignement parfait au milieu */
-    right: 10px; 
-    margin: 0; 
-}
-
-.react-datepicker__navigation--previous,
-.react-datepicker__navigation--next {
-    width: 25px;
-    height: 25px;
-    
-    background: transparent !important;
-    border: none !important;
+  right: 10px;
 }
 
 .react-datepicker__navigation-icon::before {
-    border-color: var(--text-color) !important;
-    border-width: 1px 1px 0 0 !important;
-    
-    /* Augmente la taille de la flèche pour le toucher (mobile) */
-    height: 10px;
-    width: 10px;
-    top: 0; /* Centrage automatique */
+  border-color: var(--text-color) !important;
+  border-width: 1px 1px 0 0 !important;
+  height: 10px;
+  width: 10px;
 }
 
-/* Style du texte du mois */
+/* Nom du mois */
 .react-datepicker__current-month {
-    color: var(--primary-red) !important;
-    font-weight: 700;
-    font-size: 1.1em;
-    padding: 0; 
-    line-height: 38px; /* Force l'alignement vertical avec la hauteur du header */
-    height: 38px;
-    text-align: center;
-    background-color: transparent !important;
-    /* S'assurer qu'il reste centré */
-    width: 100%; 
+  color: var(--primary-red) !important;
+  font-weight: 700;
+  font-size: 1.1em;
+  line-height: 38px;
+  height: 38px;
+  text-align: center;
+  width: 100%;
 }
 
-/* Règle pour le tableau des jours */
+/* Jours de la semaine et jours du mois */
 .react-datepicker__month {
-    margin: 0.4rem;
+  margin: 0.4rem;
 }
-.react-datepicker__week {
-    padding: 0 0.2rem; 
-}
-
-
-/* Jours de la semaine (Su, Mo, Tu...) */
-.react-datepicker__day-name {
-    color: var(--light-gray);
-    /* Augmente la taille des cellules pour le toucher (mobile) */
-    width: 2.3rem; 
-    line-height: 2.3rem;
-    margin: 0.166rem;
-}
-
-/* Jours du mois */
+.react-datepicker__day-name,
 .react-datepicker__day {
-    color: var(--text-color);
-    transition: background-color 0.2s;
-    /* Augmente la taille des cellules pour le toucher (mobile) */
-    width: 2.3rem;
-    line-height: 2.3rem;
-    margin: 0.166rem;
+  width: 2.3rem;
+  line-height: 2.3rem;
+  margin: 0.166rem;
 }
 
-/* Jours hors mois (grisés) */
+.react-datepicker__day-name {
+  color: var(--light-gray);
+}
+.react-datepicker__day {
+  color: var(--text-color);
+  transition: background-color 0.2s;
+}
 .react-datepicker__day--outside-month {
-    color: #555;
+  color: #555;
 }
 
-/* Jours sélectionnables au survol */
+/* États des jours */
 .react-datepicker__day:hover {
-    background-color: #3c3c3c;
-    border-radius: 50%;
+  background-color: #3c3c3c;
+  border-radius: 50%;
 }
-
-/* Jour sélectionné (la pastille) */
 .react-datepicker__day--selected,
 .react-datepicker__day--in-selecting-range,
-.react-datepicker__day--in-range {
-    background-color: var(--primary-red) !important;
-    color: white;
-    border-radius: 50%;
-}
-
-/* Style de la range (la période entre start et end) */
+.react-datepicker__day--in-range,
 .react-datepicker__day--range-end,
 .react-datepicker__day--range-start {
-    background-color: var(--primary-red) !important;
-    color: white;
-    border-radius: 50%;
+  background-color: var(--primary-red) !important;
+  color: white;
+  border-radius: 50%;
 }
-
-/* Jours grisés/désactivés */
 .react-datepicker__day--disabled {
-    color: #555 !important;
-    cursor: default;
-    background-color: transparent !important;
+  color: #555 !important;
+  cursor: default;
+  background-color: transparent !important;
 }
-
 .react-datepicker__day--disabled:hover {
-    background-color: transparent !important;
+  background-color: transparent !important;
 }
 
-/* Années et Mois dans les sélections déroulantes */
-.react-datepicker__year-option:hover, 
-.react-datepicker__month-option:hover {
-    background-color: #3c3c3c;
-}
-.react-datepicker__year-option--selected,
-.react-datepicker__month-option--selected {
-    color: var(--primary-red);
+/* Scrollbar (pour WebKit) */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-/* Rendre le calendrier responsive sur petits écrans */
+.modal-content::-webkit-scrollbar-track {
+  background: var(--modal-bg);
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 10px;
+  border: 2px solid var(--modal-bg);
+}
+
+/* ---------------------------------- */
+/* --- Animations --- */
+/* ---------------------------------- */
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------------------------- */
+/* --- Media Queries (Compatibilité Mobile) --- */
+/* ---------------------------------- */
+
+/* Tablette et petits écrans (max 768px) */
+@media (max-width: 768px) {
+  /* Conteneur principal */
+  .cars-container {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cars-container h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  /* Grille des voitures : une seule colonne */
+  .cars-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+/* Téléphone (max 600px) */
+@media (max-width: 600px) {
+  /* Modal de location */
+  .modal-content {
+    padding: 20px;
+    margin: 10px;
+    max-height: 90vh;
+  }
+  .modal-content h2 {
+    font-size: 1.8em;
+  }
+  .date-selection {
+    gap: 10px;
+  }
+  .modal-content button:last-of-type {
+    font-size: 1em;
+    padding: 12px;
+  }
+}
+
+/* DatePicker sur très petits écrans (max 400px) */
 @media (max-width: 400px) {
-    .react-datepicker {
-        max-width: 95vw; /* S'adapte presque à la largeur de l'écran */
-        font-size: 0.9em;
-    }
-    
-    .react-datepicker__day-name, 
-    .react-datepicker__day {
-        width: 2rem; 
-        line-height: 2rem;
-        margin: 0.1rem;
-    }
+  .react-datepicker {
+    max-width: 95vw;
+    font-size: 0.9em;
+  }
+
+  .react-datepicker__day-name,
+  .react-datepicker__day {
+    width: 2rem;
+    line-height: 2rem;
+    margin: 0.1rem;
+  }
 }
