@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { FiUser } from "react-icons/fi";
 import "./Profile.css";
-import { API_BASE_URL } from "../../config.js";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function UserProfile() {
   const [user, setUser] = useState(null);
