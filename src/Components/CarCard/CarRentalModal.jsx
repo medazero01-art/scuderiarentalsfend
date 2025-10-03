@@ -4,7 +4,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
 import "./CarRentalModal.css";
-import { API_BASE_URL } from "../../config.js";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const calculateDays = (start, end) => {
   if (!start || !end || moment(start).isAfter(end, 'day')) return 0;

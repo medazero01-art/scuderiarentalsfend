@@ -1,7 +1,7 @@
 // src/components/CarCard/CarCard.js
 import React, { useState } from 'react';
 import './CarCard.css'; 
-import { API_BASE_URL } from "../../config.js";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 import CarRentalModal from './CarRentalModal.jsx';
 
 const CarCard = ({ car, isAdmin, onDelete, onCardClick }) => { 

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./AdminPanel.css"; 
-import { API_BASE_URL } from "../../config.js";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function AdminPanel() {
   const [user, setUser] = useState(null);

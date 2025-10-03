@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
-import { API_BASE_URL } from "../../config.js";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Login() {
   const [username, setUsername] = useState("");

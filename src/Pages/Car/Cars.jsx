@@ -4,7 +4,7 @@ import CarCard from "../../Components/CarCard/CarCard.jsx";
 import AddCar from "../../Components/CarCard/AddCar.jsx";
 import CarRentalModal from "../../Components/CarCard/CarRentalModal.jsx";
 import "./Cars.css";
-import { API_BASE_URL } from "../../config.js";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Cars() {
   const [cars, setCars] = useState([]);
