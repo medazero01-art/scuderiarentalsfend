@@ -1,0 +1,339 @@
+/* Home */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-text {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.hero-text h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 16px;
+  color: hsl(0, 0%, 71%);
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-primary {
+  background: #e63946; 
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn-primary:hover {
+  background: #d62828;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #e63946;
+  border: 2px solid #e63946;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn-secondary a{
+  text-decoration: none;
+  color: inherit;
+}
+.btn-secondary:hover {
+  background: #e63946;
+  color: #fff;
+}
+
+.hero-image img {
+  max-width: 690px;
+  height: auto;
+}
+
+.bg-video {
+  position: absolute;
+  width: 113%;
+  height: auto;
+  object-fit: cover; 
+  z-index: -2; 
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  background: rgba(37, 37, 37, 0.438); 
+  z-index: -1; 
+}
+
+/* Logos grille */
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  align-items: center;
+  justify-items: center;
+  padding: 40px;
+  background: #181818;
+}
+
+.brand img {
+  max-width: 100px;
+  height: auto;
+  filter: grayscale(100%) brightness(0.9);
+  transition: all 0.3s ease;
+}
+
+.brand img:hover {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.1);
+}
+
+
+/* Services */
+
+.services-container {
+  padding: 50px 20px;
+  background-color: rgba(24, 24, 24, 1);
+  text-align: center;
+}
+
+.services-header {
+  margin-bottom: 50px;
+}
+
+.services-title {
+  font-size: 14px;
+  color: #d1787c;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.services-header h3 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #d8d8d8;
+  margin: 0;
+}
+
+.services-description {
+  font-size: 16px;
+  color: #cecece;
+  max-width: 800px;
+  margin: 10px auto 0;
+  line-height: 1.6;
+}
+
+.services-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.service-card {
+  position: relative;
+  width: 350px;
+  height: 450px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(70, 70, 70, 0.1);
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.8s ease;
+}
+
+.instant-rent {
+  background-image: url('../../assets/instantrent.jpg');
+}
+
+.private-driver {
+  background-image: url('../../assets//privetdriver.jpg');
+}
+
+.long-trip {
+  background-image: url('../../assets/carassurance.jpg');
+}
+
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 30px;
+  box-sizing: border-box;
+  transition: background-color 0.6s ease; 
+}
+
+.service-card:hover .card-overlay {
+  background-color: rgba(0, 0, 0, 0); 
+}
+
+.card-content {
+  color: white;
+  text-align: center;
+  background-color: transparent;
+}
+
+.card-icon {
+  margin-bottom: 20px;
+  display: block;
+  background-color: transparent;
+}
+
+.card-icon svg{
+  height: 60px;
+}
+
+.card-content h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.card-content p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  background-color: transparent;
+}
+
+
+/* --- SECTION 'Why Choose Us ?' --- */
+.advantages-section {
+  padding: 50px 20px;
+  background-color: rgba(24, 24, 24, 1);
+  text-align: center;
+}
+
+.section-header {
+  margin-bottom: 40px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: rgba(230, 57, 70, 1);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+}
+
+.description {
+  font-size: 16px;
+  color: #c5c5c5;
+  max-width: 800px;
+  margin: 10px auto 0;
+  line-height: 1.6;
+}
+
+.advantages-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.advantage-item {
+  width: 300px;
+  text-align: center;
+  padding: 20px;
+}
+
+.icon-circle {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  font-size: 28px;
+}
+
+.advantage-item h4 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.advantage-item p {
+  font-size: 14px;
+  color: #c5c5c5;
+  line-height: 1.5;
+}
+
+/* Hero texte centré sur mobile */
+@media (max-width: 768px) {
+  .hero-text {
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

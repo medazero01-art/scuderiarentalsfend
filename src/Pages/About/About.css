@@ -1,0 +1,165 @@
+/* About Us Section Container */
+.about-us-container {
+  background-color: rgba(24, 24, 24, 1);
+  color: #e7e7e7;
+  font-family: Arial, sans-serif;
+  padding: 80px 100px;
+}
+
+.about-us-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-us-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #ffffff;
+  position: relative;
+}
+
+.about-us-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: #ff5252;
+}
+
+/* Story and Image Section */
+.story-section {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 60px;
+}
+
+.story-text {
+  flex: 1;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.story-text p {
+  margin-bottom: 20px;
+}
+
+.story-text p:last-child {
+  margin-bottom: 0;
+}
+
+.story-image {
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.story-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mission and Values Section */
+.mission-section, .values-section {
+  margin-bottom: 50px;
+}
+
+.mission-section h3, .values-section h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff5252;
+  margin-bottom: 20px;
+}
+
+.mission-section p {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.values-section ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.values-section li {
+  background-color: #2e2e2e;
+  padding: 25px;
+  border-left: 5px solid #ff5252;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.value-icon {
+  font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+  /* Général */
+  .about-us-container {
+    padding: 40px 20px; /* Réduit le padding pour les petits écrans */
+  }
+
+  .about-us-title {
+    font-size: 2rem; /* Réduit la taille du titre */
+    margin-bottom: 30px;
+  }
+  
+  /* Section "Our Story" */
+  .story-section {
+    flex-direction: column; /* Empile les éléments verticalement */
+    gap: 30px; /* Réduit l'espace entre l'image et le texte */
+  }
+  
+  .story-image {
+    order: -1; /* Place l'image au-dessus du texte sur mobile */
+  }
+  
+  .story-text {
+    font-size: 1rem; /* Ajuste la taille de la police pour une meilleure lisibilité */
+  }
+
+  /* Sections "Mission" et "Values" */
+  .mission-section, .values-section {
+    margin-bottom: 40px;
+  }
+  
+  .mission-section h3, .values-section h3 {
+    font-size: 1.5rem; /* Réduit la taille des sous-titres */
+    text-align: center;
+  }
+  
+  .mission-section p {
+    font-size: 1rem;
+  }
+
+  /* Liste des valeurs */
+  .values-section ul {
+    grid-template-columns: 1fr; /* Une seule colonne pour les listes */
+    gap: 20px;
+  }
+  
+  .values-section li {
+    flex-direction: column; /* Empile l'icône et le texte */
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .value-icon {
+    margin-bottom: 10px;
+  }
+}

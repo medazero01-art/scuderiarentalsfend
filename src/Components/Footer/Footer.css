@@ -1,0 +1,169 @@
+/* --- Variables CSS --- */
+:root {
+  --primary-red: #ff5252;
+  --dark-bg: rgba(24, 24, 24, 1);
+  --text-color: #e7e7e7;
+  --link-color: #cccccc;
+  --heading-color: #ffffff;
+}
+
+/* ---------------------------------- */
+/* --- 1. Conteneur Principal --- */
+/* ---------------------------------- */
+
+.footer-container {
+  background-color: var(--dark-bg);
+  padding: 60px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+  position: relative;
+  flex-wrap: wrap; /* Assure la flexibilité avant les media queries */
+  gap: 30px; /* Ajout d'un gap par défaut */
+}
+
+/* ---------------------------------- */
+/* --- 2. Section Gauche (About) --- */
+/* ---------------------------------- */
+
+.footer-about {
+  flex: 1.5; /* Donne plus d'espace à cette colonne */
+  min-width: 250px;
+  max-width: 350px;
+}
+
+.footer-logo {
+  color: var(--primary-red);
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.footer-description {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: var(--link-color);
+}
+
+/* Icônes Sociales */
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-red);
+  color: white;
+  border-radius: 6px;
+  font-size: 20px;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.social-icons a:hover {
+  background-color: #e04b4b;
+  transform: translateY(-2px);
+}
+
+/* ---------------------------------- */
+/* --- 3. Colonnes de Liens (Milieu/Droite) --- */
+/* ---------------------------------- */
+
+.footer-column {
+  flex: 1;
+  min-width: 150px;
+}
+
+.footer-column h4 {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--heading-color);
+  margin-bottom: 20px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column li {
+  margin-bottom: 12px;
+}
+
+.footer-column a {
+  text-decoration: none;
+  color: var(--link-color);
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: var(--primary-red);
+}
+
+/* ---------------------------------- */
+/* --- 4. Media Queries (Réactivité) --- */
+/* ---------------------------------- */
+
+/* Tablette et petits ordinateurs (992px) */
+@media (max-width: 992px) {
+  .footer-container {
+    padding: 50px 40px;
+    /* Permet un meilleur enveloppement des colonnes */
+    justify-content: flex-start;
+  }
+
+  .footer-about {
+    flex-basis: 100%; /* La section About prend toute la largeur */
+    margin-bottom: 30px;
+    max-width: 100%;
+  }
+
+  .footer-column {
+    flex-basis: calc(50% - 15px); /* Les colonnes de liens prennent 50% de la largeur */
+    min-width: 120px;
+  }
+}
+
+/* Mobile (768px et moins) */
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 40px 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  /* Centre la section About */
+  .footer-about {
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .social-icons {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  /* Colonnes de liens s'empilent */
+  .footer-column {
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    min-width: unset;
+  }
+
+  .footer-column h4 {
+    margin-bottom: 15px;
+  }
+}

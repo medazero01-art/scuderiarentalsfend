@@ -1,0 +1,209 @@
+/* --- Variables CSS --- */
+:root {
+  --primary-red: #e63946;
+  --secondary-red: rgb(168, 21, 21);
+  --dark-bg: rgba(24, 24, 24, 1);
+  --text-color: rgba(197, 197, 197, 1);
+  --subtitle-color: #f0f0f0;
+  --heading-color: #fff;
+}
+
+/* ---------------------------------- */
+/* --- 1. Section Principale --- */
+/* ---------------------------------- */
+
+.contact-us-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Mieux pour l'espacement sur grand écran */
+  align-items: flex-start; /* Aligne le contenu en haut */
+  padding: 80px 40px;
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+  gap: 50px;
+}
+
+/* ---------------------------------- */
+/* --- 2. Bloc de Gauche (Informations) --- */
+/* ---------------------------------- */
+
+.contact-left {
+  flex: 1;
+  max-width: 500px;
+}
+
+.subtitle {
+  color: var(--primary-red);
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+
+.contact-left h2 {
+  color: var(--heading-color);
+  font-size: 3em;
+  margin: 5px 0 20px 0;
+}
+
+.contact-description {
+  margin-top: 20px;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Liste de Contact */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.contact-icon {
+  font-size: 24px;
+  margin-right: 15px;
+  color: var(--primary-red);
+  min-width: 24px;
+  text-align: center;
+}
+
+.contact-list p,
+.contact-list a {
+  margin: 0;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-list a:hover {
+  color: var(--secondary-red);
+}
+
+/* Médias Sociaux */
+.social-media {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.social-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px; /* Taille légèrement augmentée */
+  height: 40px;
+  border-radius: 50%; /* Rond pour un look moderne */
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.social-icon:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+.social-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.linkedin {
+  background-color: #0e76a8;
+}
+.twitter {
+  background-color: #000000;
+  border: 1px solid #fff;
+}
+.facebook {
+  background-color: #3b5998;
+}
+.instagram {
+  background-color: #c13584;
+}
+
+/* ---------------------------------- */
+/* --- 3. Bloc de Droite (Carte) --- */
+/* ---------------------------------- */
+
+.contact-right {
+  flex: 1;
+  max-width: 600px;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 450px; /* Hauteur ajustée */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------------------------------- */
+/* --- 4. Media Queries (Mobile) --- */
+/* ---------------------------------- */
+
+@media (max-width: 900px) {
+  .contact-us-section {
+    padding: 60px 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /* Force l'empilement sur tablette et mobile */
+  .contact-left,
+  .contact-right {
+    max-width: 100%;
+  }
+
+  .contact-left h2 {
+    font-size: 2.5em;
+  }
+
+  .map-placeholder {
+    height: 350px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-us-section {
+    padding: 40px 15px;
+  }
+
+  .contact-left {
+    text-align: center;
+  }
+
+  .contact-left h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+  }
+
+  /* Centre la liste et les médias sociaux */
+  .contact-list {
+    text-align: left; /* Conserve l'alignement du texte à l'intérieur */
+    margin: 30px auto;
+  }
+
+  .social-media {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .map-placeholder {
+    height: 300px;
+    width: 340px;
+  }
+}

@@ -1,0 +1,182 @@
+/* --- 1. Variables CSS Globales (Conservées pour la cohérence du projet) --- */
+:root {
+  --primary-red: #e24c4b;
+  --dark-bg: #1a1a1a;
+  --text-color: #f0f0f0;
+  --light-gray: #ccc;
+}
+
+/* --- 2. Styles du Conteneur du Panel Admin --- */
+
+.admin-container {
+  background-color: var(--dark-bg);
+  padding: 40px 20px;
+  color: var(--text-color);
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh; /* Assure que le fond sombre couvre toute la hauteur */
+}
+
+.admin-container h1 {
+  color: var(--primary-red);
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.admin-container h2 {
+  color: var(--light-gray);
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* --- 3. Styles de la Table de Réservation --- */
+
+.reservation-table {
+  /* Conteneur permettant le défilement horizontal sur les petits écrans */
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.reservation-table table {
+  width: 100%;
+  min-width: 700px; /* Force la largeur minimale pour un affichage lisible */
+  border-collapse: collapse;
+  background-color: var(--dark-bg);
+  border-radius: 8px;
+}
+
+.reservation-table th,
+.reservation-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+  white-space: nowrap; /* Important pour les cellules de la table responsive */
+}
+
+.reservation-table th {
+  background-color: #222;
+  color: var(--primary-red);
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.reservation-table tr:hover {
+  background-color: #2a2a2a;
+}
+
+/* --- 4. Styles des Statuts et Boutons d'Action --- */
+
+/* Statuts */
+.status-pending {
+  color: orange;
+  font-weight: 600;
+}
+.status-approved {
+  color: #4caf50;
+  font-weight: 600;
+}
+.status-rejected {
+  color: var(--primary-red);
+  font-weight: 600;
+}
+.status-completed {
+  color: #007bff;
+  font-weight: 600;
+}
+
+/* Boutons */
+.btn-approve,
+.btn-reject,
+.btn-complete {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85em;
+  margin-right: 5px;
+  transition: background-color 0.2s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.btn-approve {
+  background-color: #4caf50;
+  color: white;
+}
+.btn-approve:hover {
+  background-color: #45a049;
+  transform: translateY(-1px);
+}
+
+.btn-reject {
+  background-color: var(--primary-red);
+  color: white;
+}
+.btn-reject:hover {
+  background-color: #c93b3b;
+  transform: translateY(-1px);
+}
+
+.btn-complete {
+  background-color: #007bff;
+  color: white;
+}
+.btn-complete:hover {
+  background-color: #0069d9;
+  transform: translateY(-1px);
+}
+
+/* --- 5. Media Queries (Réactivité) --- */
+
+@media (max-width: 768px) {
+  /* Conteneur Principal */
+  .admin-container {
+    padding: 20px 10px;
+  }
+  .admin-container h1 {
+    font-size: 2em;
+  }
+  .admin-container h2 {
+    text-align: center;
+  }
+
+  /* Table */
+  .reservation-table th,
+  .reservation-table td {
+    padding: 8px 10px; /* Réduit le padding pour gagner de la place */
+    font-size: 0.9em;
+  }
+
+  .reservation-table table {
+    min-width: 600px; /* Diminue légèrement la largeur minimale */
+  }
+
+  /* Boutons */
+  .btn-approve,
+  .btn-reject,
+  .btn-complete {
+    padding: 4px 8px;
+    font-size: 0.75em;
+    margin-right: 3px;
+    display: block; /* Force les boutons à prendre toute la largeur de la cellule */
+    margin-bottom: 5px; /* Ajoute de l'espace entre les boutons */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Réduit encore plus la taille des titres */
+  .admin-container h1 {
+    font-size: 1.8em;
+  }
+  .admin-container h2 {
+    font-size: 1.3em;
+  }
+
+  /* Réduit la taille de police dans le tableau */
+  .reservation-table td {
+    font-size: 0.8em;
+  }
+}

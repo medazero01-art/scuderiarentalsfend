@@ -1,0 +1,129 @@
+/* === Navbar Desktop === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(24, 24, 24, 1);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  border: 1px solid rgba(88, 88, 88, 0.1);
+  position: relative;
+  z-index: 9999;
+}
+
+.nav-logo a {
+  font-size: 22px;
+  font-weight: bold;
+  color: #e63946;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  transition: left 0.3s ease;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links li {
+  font-size: 14px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #e63946;
+}
+
+.nav-login {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* === Login Button === */
+.login-btn {
+  border: 1px solid #e63946;
+  border-radius: 6px;
+  color: #e63946;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  display: flex;
+  gap: 8px;
+  padding: 5px 10px;
+}
+
+.login-btn:hover {
+  background-color: #e63946;
+  color: #fff;
+}
+
+/* === Burger Menu === */
+.burger-menu {
+  display: none; /* caché par défaut sur desktop */
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #e63946;
+  cursor: pointer;
+  z-index: 1100;
+  position: absolute;
+  top: 18px;
+  right: 18px;
+}
+
+/* === Responsive Mobile / Tablette === */
+@media (max-width: 900px) {
+  .nav-items {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 220px;
+    height: 100vh;
+    background: rgba(24, 24, 24, 0.98);
+    flex-direction: column;
+    gap: 20px;
+    padding: 60px 20px 20px 20px;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.15);
+    z-index: 1000;
+  }
+
+  .nav-items.open {
+    left: 0; /* visible */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    padding: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: left;
+  }
+
+  .nav-login {
+    width: 100%;
+    justify-content: flex-start;
+    padding-top: 20px;
+  }
+
+  .burger-menu {
+    display: block; /* visible sur mobile/tablette */
+  }
+}
