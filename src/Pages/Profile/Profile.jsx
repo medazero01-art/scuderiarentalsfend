@@ -76,19 +76,50 @@ function UserProfile() {
       {/* 🛑 SECTION DES RÉSERVATIONS */}
       <div className="reservations-section">
         <h3>My Reservations ({reservations.length})</h3>
+      
         {reservations.length === 0 ? (
           <p className="no-reservations">No current or past reservations.</p>
         ) : (
           <div className="reservations-list">
             {reservations.map((res) => (
               <div key={res._id} className="reservation-card">
-                <img src={res.car.imageUrl} alt={res.car.name} className="reservation-car-image" />
+      
+                <img
+                  src={res.car?.imageUrl || "https://imgur.com/MW3Som8.png"}
+                  alt={res.car?.name || "DELETED Car"}
+                  className="reservation-car-image"
+                />
+      
                 <div className="reservation-details">
-                  <h4>{res.car.name} ({res.car.year})</h4>
-                  <p>From: <strong>{formatDate(res.startDate)}</strong> to <strong>{formatDate(res.endDate)}</strong></p>
-                  <p>Total: <strong>{res.totalPrice}€</strong></p>
-                  <p>Status: <span className={`reservation-status ${getStatusClass(res.status)}`}>{res.status.toUpperCase()}</span></p>
+                  <h4>
+                    {res.car?.name ?? "Deleted"} ({res.car?.year ?? "-"})
+                  </h4>
+      
+                  <p>
+                    From:{" "}
+                    <strong>
+                      {res.startDate ? formatDate(res.startDate) : "-"}
+                    </strong>{" "}
+                    to{" "}
+                    <strong>
+                      {res.endDate ? formatDate(res.endDate) : "-"}
+                    </strong>
+                  </p>
+      
+                  <p>
+                    Total: <strong>{res.totalPrice ?? "N/A"}€</strong>
+                  </p>
+      
+                  <p>
+                    Status:{" "}
+                    <span
+                      className={`reservation-status ${getStatusClass(res.status)}`}
+                    >
+                      {(res.status || "unknown").toUpperCase()}
+                    </span>
+                  </p>
                 </div>
+      
               </div>
             ))}
           </div>
