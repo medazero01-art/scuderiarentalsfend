@@ -92,8 +92,8 @@ function AdminPanel() {
           <tbody>
             {reservations.map((res) => (
               <tr key={res._id}>
-                <td>{res.user.username} ({res.user.phoneNumber})</td>
-                <td>{res.car.name} ({res.car.year})</td>
+                <td>{res.user?.username ?? "Unknown"} ({res.user?.phoneNumber ?? "-"})</td>
+                <td>{res.car?.name ?? "Unknown"} ({res.car?.year ?? "-"})</td>
                 <td>{formatDate(res.startDate)} - {formatDate(res.endDate)}</td>
                 <td>{res.totalPrice}€</td>
                 <td className={`status-${res.status}`}>{res.status.toUpperCase()}</td>
