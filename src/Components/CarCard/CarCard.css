@@ -9,7 +9,7 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
-  width: 280px; 
+  width: 100%; 
 }
 
 .car-card:hover {

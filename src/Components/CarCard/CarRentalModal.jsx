@@ -99,56 +99,63 @@ const CarRentalModal = ({ car, onClose, userToken, onReservationSuccess }) => {
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={e => e.stopPropagation()}>
-        <button className="close-btn" onClick={onClose}>X</button>
+        <button className="close-btn" onClick={onClose}>×</button>
         <h2>{car.name} ({car.year})</h2>
         <img src={car.imageUrl} alt={car.name} className="modal-car-image"/>
-        <p>{car.description}</p>
-        <p>Price per day: {car.pricePerDay}€</p>
+        
+        <div className="modal-body">
+          <p>{car.description}</p>
+          <p>{car.pricePerDay}€</p>
 
-        <div className="date-selection">
-          <label>Start Date:</label>
-          <DatePicker
-            selected={startDate}
-            onChange={(date) => {
-              setStartDate(date);
-              if (date && endDate && moment(date).isAfter(endDate, "day")) {
-                setEndDate(null);
-              }
-            }}
-            selectsStart
-            startDate={startDate}
-            endDate={endDate}
-            dateFormat="dd/MM/yyyy"
-            placeholderText="Select start date"
-            filterDate={isDateDisabled}
-            className="date-input"
-            wrapperClassName="date-picker-wrapper"
-          />
+          <div className="date-selection">
+            <div>
+              <label>Start Date</label>
+              <DatePicker
+                selected={startDate}
+                onChange={(date) => {
+                  setStartDate(date);
+                  if (date && endDate && moment(date).isAfter(endDate, "day")) {
+                    setEndDate(null);
+                  }
+                }}
+                selectsStart
+                startDate={startDate}
+                endDate={endDate}
+                dateFormat="dd/MM/yyyy"
+                placeholderText="Pick start"
+                filterDate={isDateDisabled}
+                className="date-input"
+                wrapperClassName="date-picker-wrapper"
+              />
+            </div>
 
-          <label>End Date:</label>
-          <DatePicker
-            selected={endDate}
-            onChange={(date) => setEndDate(date)}
-            selectsEnd
-            startDate={startDate}
-            endDate={endDate}
-            minDate={startDate || moment().toDate()}
-            dateFormat="dd/MM/yyyy"
-            placeholderText="Select end date"
-            filterDate={isDateDisabled}
-            disabled={!startDate}
-            className="date-input"
-            wrapperClassName="date-picker-wrapper"
-          />
-          <h6>Les crénaux non-disponibles sont désactivés.</h6>
+            <div>
+              <label>End Date</label>
+              <DatePicker
+                selected={endDate}
+                onChange={(date) => setEndDate(date)}
+                selectsEnd
+                startDate={startDate}
+                endDate={endDate}
+                minDate={startDate || moment().toDate()}
+                dateFormat="dd/MM/yyyy"
+                placeholderText="Pick end"
+                filterDate={isDateDisabled}
+                disabled={!startDate}
+                className="date-input"
+                wrapperClassName="date-picker-wrapper"
+              />
+            </div>
+            <h6>Unavailable slots are automatically disabled.</h6>
+          </div>
+
+          <div className="rental-summary">
+            <p>Selected days: <strong>{calculateDays(startDate, endDate)}</strong></p>
+            <p>Total price: <strong>{rentalPrice}€</strong></p>
+          </div>
+
+          {error && <p className="error">{error}</p>}
         </div>
-
-        <div className="rental-summary">
-          <p>Selected days: <strong>{calculateDays(startDate, endDate)}</strong></p>
-          <p>Total price: <strong>{rentalPrice}€</strong></p>
-        </div>
-
-        {error && <p className="error">{error}</p>}
 
         <button 
           onClick={handleReserve} 
